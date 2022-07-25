@@ -1,28 +1,37 @@
-import React,{useState} from 'react'
-
-
-const Navbar = () => {
-  const {nav, setNav} =useState()
+import React from "react";
+import { Badge } from "react-bootstrap";
+function Navbar() {
+    const style ="text-[14px] cursor-pointer ml-[25px]"
   return (
-    <div className='w-screen h-[80px] z-10 bg-zinc-200 fixed drop-shadow-lg'>
-        <div className='px-2 flex justify-between items-center w-full h-full'>
-        <div className='flex items-center'>
-            <h1 className='text-3xl font bold mr-4 sm:text-4xl'>Shop.com</h1>
-            <ul className='hidden md:flex'>
-                <li>HOME</li>
-                <li>OUR COLLECTIONS</li>
-                <li>PRODUCTS</li>
-            </ul>
+    <div className="navbar h-[60px] shadow-md relative z-10">
+      <div className="wrapper p1-[20px] pr-[20px] pt-[10px] pb[10px] flex justify-between items-center">
+        {/* left div*/}
+        <div classname="left flex flex-1 items-center">
+          <div classname="language cursor-pointer text-[16px]">search ?</div>
+          <div className="searchinput flex border-[2px] border-solid border-lighgrey rounded-md items-center ml-[10px] p-[5px]
+          focus-within:border-[#8a4af3] transition-all">
+            <input className="input outline-none" 
+            type='text'/>
+            <search className='' style={{fontsize:'16px'}}/>
+          </div>
         </div>
-        <div className='hidden md:flex pr-4'>
-          <button className='border-none bg-transparent text-black mr-4'>
-            Sign-In</button>
-          <button classname='px-8 py-3'>Sign-up</button>
-           </div>
+        {/* logo*/}
+        <div className="center flex-1 text-center">
+            <div className="logo font-bold text-lg">Shop near you.com</div>
         </div>
-        
+        {/* right div part*/ }
+        <div className="right flex flex-1 items-center justify-end">
+            <div className={style}>Register</div>
+            <div className={style}> Sign in</div>
+            <div classname={style}> 
+            <Badge badgecontent={2} color='primary'>
+                <ShoppingCartOutlined/>
+            </Badge>
+            </div>
+        </div>
+      </div>
     </div>
   );
-};
+}
 
-export default Navbar
+export default Navbar;

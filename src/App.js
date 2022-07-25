@@ -1,11 +1,16 @@
 
-import Navbar from './components/Navbar';
+import Cart from "./Pages/Cart";
+import CategoryPage from "./Pages/CategoryPage";
+import Home from "./Pages/Home";
+import ProductPage from "./Pages/ProductPage";
+import Login from "./components/Login";
 function App()
 {
   return(
-    <>
-        <Navbar/>
-    </>
+    <div className="App">
+        <Login/>
+        </div>
+
   );
 }
 
